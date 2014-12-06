@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/rogah/rogeriocarvalho.io.png)](https://travis-ci.org/rogah/rogeriocarvalho.io)
+[![Build Status](https://api.travis-ci.org/rogah/rogeriocarvalho.io.svg)](https://travis-ci.org/rogah/rogeriocarvalho.io)
 
 
 rogeriocarvalho.io
 ========
 
-Rogerio Carvalho website.
+Rogerio Carvalho's website.
