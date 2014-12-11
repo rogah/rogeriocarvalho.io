@@ -8,10 +8,10 @@ lib-cov
 *.gz
 /*.env
 
+.DS_Store
 pids
 logs
 results
 
-npm-debug.log
 node_modules
 build
