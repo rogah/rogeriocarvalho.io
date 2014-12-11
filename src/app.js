@@ -1,6 +1,7 @@
 'use strict';
 
-var path = require('path'), 
+var http = require('http'),
+  path = require('path'),
   express = require('express');
 
 var app = express();
@@ -14,3 +15,9 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('port', process.env.PORT || 3000);
 
 module.exports = app;
+
+if (!module.parent) {
+  var server = http.createServer(app).listen(app.get('port'), function () {
+    console.log('Server listening on port %s', server.address().port);
+  });
+}
