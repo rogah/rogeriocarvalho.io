@@ -15,6 +15,9 @@
     "url": "https://github.com/rogah/rogeriocarvalho.io.git"
   },
   "scripts": {
+    "build": "gulp build",
+    "deploy": "gulp deploy",
+    "postinstall": "npm run deploy",
     "start": "node build/app.js",
     "test": "node_modules/cucumber/bin/cucumber.js test/features -r test/features/step_definitions -r test/features/support -f pretty"
   },
