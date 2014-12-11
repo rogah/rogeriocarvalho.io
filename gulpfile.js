@@ -48,7 +48,8 @@ gulp.task('clean', function () {
 gulp.task('lint', function () {
   return gulp.src(paths.scripts.all)
     .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jshint.reporter('fail'));
 });
 
 // beautify all js files
