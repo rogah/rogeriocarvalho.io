@@ -26,7 +26,7 @@ var paths = {
     source: './src/**/*'
   },
   scripts: {
-    all: ['./**/*.js', '!./node_modules/**', '!./build/**'],
+    all: ['./src/**/*.js', './test/**/*.js', './gulpfile.js'],
     source: './src/**/*.js',
     test: './test/**/*.js'
   },
