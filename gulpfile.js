@@ -1,7 +1,8 @@
 'use strict';
 
 var gulp = require('gulp'),
-  clean = require('gulp-clean'),
+  del = require('del'),
+  vinylPaths = require('vinyl-paths'),
   jshint = require('gulp-jshint'),
   beautify = require('gulp-jsbeautifier'),
   cucumber = require('gulp-cucumber'),
@@ -39,9 +40,7 @@ gulp.task('clean', function () {
   return gulp.src(paths.build, {
       read: false
     })
-    .pipe(clean({
-      force: true
-    }));
+    .pipe(vinylPaths(del));
 });
 
 // lint all js source files
