@@ -25,7 +25,7 @@
     "postbuild": "npm run deploy",
     "prestart": "npm run build",
     "start": "iojs build/app.js",
-    "test": "cucumber.js test/features -r test/features/step_definitions -r test/features/support -f pretty"
+    "test": "cucumber.js test/features -r test/features/step_definitions -r test/features/support -f pretty",
     "postinstall": "npm run build"
   },
   "dependencies": {
