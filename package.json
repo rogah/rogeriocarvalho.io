@@ -16,15 +16,15 @@
   },
   "scripts": {
     "env": "env",
-    "clean": "rimraf build && mkdirp build",
-    "copy": "cp -R src/ build/",
+    "clean": "rimraf dist",
+    "copy": "cp -R src/ dist/",
     "lint": "jshint src/*.js",
     "beautify:js": "js-beautify **/*.js -r",
     "deploy": "npm run clean -s && npm run copy",
     "build": "npm run lint && npm run beautify:js",
     "postbuild": "npm run deploy",
     "prestart": "npm run build",
-    "start": "iojs build/app.js",
+    "start": "iojs dist/app.js",
     "test": "cucumber.js test/features -r test/features/step_definitions -r test/features/support -f pretty",
     "postinstall": "npm run build"
   },
