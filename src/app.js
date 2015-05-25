@@ -17,6 +17,6 @@ module.exports = app;
 
 if (!module.parent) {
   var server = app.listen(app.get('port'), function () {
-    console.log('Server listening on port %s', server.address().port);
+    console.log('Server listening at %s:%s', server.address().address, server.address().port);
   });
 }

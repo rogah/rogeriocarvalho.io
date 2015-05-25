@@ -1,1 +1,1 @@
-web: node build/app.js
+web: iojs build/app.js

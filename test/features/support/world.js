@@ -20,7 +20,7 @@ var World = function World(callback) {
   this.browser = browser;
 
   this.startServer = function (callback) {
-    this.server = server.listen(9001, callback);
+    this.server = server.listen(9001, 'localhost', callback);
   };
 
   this.stopServer = function (callback) {
