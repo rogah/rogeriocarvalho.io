@@ -1,1 +1,1 @@
-web: iojs build/app.js
+web: iojs src/app.js
