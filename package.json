@@ -26,6 +26,7 @@
     "prestart": "npm run build",
     "start": "iojs build/app.js",
     "test": "cucumber.js test/features -r test/features/step_definitions -r test/features/support -f pretty"
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "express": "^4.12.4",
