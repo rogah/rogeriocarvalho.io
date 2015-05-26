@@ -1,1 +1,1 @@
-web: iojs dist/app.js
+web: iojs src/app.js

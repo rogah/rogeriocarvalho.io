@@ -9,7 +9,7 @@ app.get('/about', function (req, res) {
   res.send('About Rogerio Carvalho');
 });
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, 'dist')));
 
 app.set('port', process.env.PORT || 3000);
 
