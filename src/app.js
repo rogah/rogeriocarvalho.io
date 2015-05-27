@@ -10,7 +10,7 @@ app.get('/about', function (req, res) {
 });
 
 app.use(express.static(path.resolve(__dirname, 'dist')));
-app.use(express.static(path.resolve(__dirname, 'vendor')));
+app.use('/vendor', express.static(path.resolve(__dirname, '../bower_components')));
 
 app.set('port', process.env.PORT || 3000);
 
