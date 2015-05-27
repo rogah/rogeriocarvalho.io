@@ -14,15 +14,15 @@ gulp.task('clean', function() {
 });
 
 gulp.task('lint', function() {
-  return gulp.src('./src/*.js')
+  return gulp.src(['./src/**/*.js', '!./src/dist/**/*.js', '!./src/vendor/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 gulp.task('beautify:js', ['lint'], function() {
-  return gulp.src('./src/**/*.js')
+  return gulp.src(['./src/**/*.js', '!./src/dist/**/*.js', '!./src/vendor/**/*.js'])
     .pipe(beautify({config: '.jsbeautifyrc', mode: 'VERIFY_AND_WRITE'}))
-    .pipe(gulp.dest('./src/'))
+    .pipe(gulp.dest('./src'))
 });
 
 gulp.task('minify:js', ['clean'], function () {
@@ -40,13 +40,13 @@ gulp.task('minify:html', ['clean'], function () {
 });
 
 gulp.task('server', ['build'], function () {
-  nodemon({ 
+  return nodemon({ 
     script: './src/app.js',
     ext: 'html js', 
     ignore: ['ignored.js'],
-    watch: ['./src', './test']
+    watch: ['./src', './test'],
+    tasks: ['build']
   })
-  .on('change', ['lint', 'test'])
   .on('restart', function () {
     console.log('Server restarted.');
   });

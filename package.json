@@ -17,9 +17,9 @@
   "scripts": {
     "env": "env",
     "build": "gulp build",
+    "serve": "gulp server",
     "postinstall": "npm run build",
-    "prestart": "npm run build",
-    "start": "iojs src/app.js",
+    "start": "npm run serve",
     "test": "cucumber.js test/features -r test/features/step_definitions -r test/features/support -f pretty"
   },
   "dependencies": {
