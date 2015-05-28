@@ -1,5 +1,13 @@
-$foo_color: red;
+@import "normalize";
+@import "settings";
+@import "foundation";
 
-#foo {
-  background-color: $foo_color;
+$small-primary-color: #1ea8e0;
+
+#cover {
+  @media #{$small-only} {
+    height: 100vh;
+    background-color: $small-primary-color;
+    color: $white;
+  }
 }

@@ -47,7 +47,9 @@ gulp.task('minify:html', ['clean'], function () {
 gulp.task('styles', ['clean'], function () {
   return gulp.src('./src/styles/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      includePaths: ['bower_components/foundation/scss']
+    }).on('error', sass.logError))
     .pipe(minifyCss())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./src/dist'));
@@ -56,7 +58,7 @@ gulp.task('styles', ['clean'], function () {
 gulp.task('server', ['build'], function () {
   return nodemon({ 
     script: './src/server.js',
-    ext: 'html js', 
+    ext: 'html js scss css', 
     ignore: ['ignored.js'],
     watch: ['./src', './test'],
     tasks: ['build']
