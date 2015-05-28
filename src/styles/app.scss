@@ -4,10 +4,23 @@
 
 $small-primary-color: #1ea8e0;
 
-#cover {
+#headline {
   @media #{$small-only} {
     height: 100vh;
     background-color: $small-primary-color;
-    color: $white;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+      color: $white;
+      font-size: 69.9pt;
+
+      em {
+        font-style: normal;
+        font-size: 60.5pt;
+        display: block;
+        line-height: 0.2em;
+      }
+    }
   }
 }
