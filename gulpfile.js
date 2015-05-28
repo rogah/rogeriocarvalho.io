@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp'),
   rimraf = require('gulp-rimraf'),
   jshint = require('gulp-jshint'),
@@ -53,7 +55,7 @@ gulp.task('styles', ['clean'], function () {
 
 gulp.task('server', ['build'], function () {
   return nodemon({ 
-    script: './src/app.js',
+    script: './src/server.js',
     ext: 'html js', 
     ignore: ['ignored.js'],
     watch: ['./src', './test'],

@@ -1,1 +1,1 @@
-web: iojs src/app.js
+web: iojs src/server.js
