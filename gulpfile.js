@@ -55,6 +55,11 @@ gulp.task('styles', ['clean'], function () {
     .pipe(gulp.dest('./src/dist'));
 });
 
+gulp.task('fonts', ['clean'], function () {
+  return gulp.src('./src/fonts/**/*')
+    .pipe(gulp.dest('./src/dist/fonts'));
+});
+
 gulp.task('server', ['build'], function () {
   return nodemon({ 
     script: './src/server.js',
@@ -68,4 +73,4 @@ gulp.task('server', ['build'], function () {
   });
 });
 
-gulp.task('build', ['clean', 'lint', 'beautify:js', 'minify:js', 'minify:html', 'styles']);
+gulp.task('build', ['clean', 'lint', 'beautify:js', 'minify:js', 'minify:html', 'styles', 'fonts']);

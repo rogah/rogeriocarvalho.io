@@ -1,26 +1,74 @@
 @import "normalize";
 @import "settings";
 @import "foundation";
+@import "glyphicons";
 
 $small-primary-color: #1ea8e0;
 
 #headline {
-  @media #{$small-only} {
-    height: 100vh;
-    background-color: $small-primary-color;
+  @media #{$small-up} {
+    min-height: 100vh;
+    width: 100vw;
     text-align: center;
+    background-color: $small-primary-color;
+    color: $white;
+    padding: 20vh 0;
 
     h1 {
       margin: 0;
       color: $white;
-      font-size: 5rem;
-      padding-top: 25vh;
+      font-size: 22vw;
+      line-height: 18vw;
 
       em {
         font-style: normal;
-        font-size: 4.4rem;
+        font-size: 19vw;
         display: block;
-        line-height: 0.2em;
+        line-height: 16vw;
+      }
+    }
+
+    p {
+      margin: 14vh 12vw 5vh;
+      line-height: 1.2em;
+      font-size: 5vw;
+    }
+
+    .more {
+      position: absolute;
+      bottom: 3rem;
+      width: 100vw;
+      i:before { 
+        color: $white;
+        font-size: 11vw;
+      }
+    }
+  }
+
+  @media #{$small-up and $landscape} {
+    padding: 10vh 0;
+
+    h1 {
+      font-size: 22vh;
+      line-height: 18vh;
+
+      em {
+        font-size: 19vh;
+        line-height: 16vh;
+      }
+    }
+
+    p {
+      margin: 10vh 28vw 5vh;
+      line-height: 5vh;
+      font-size: 4.5vh;
+    }
+
+    .more {
+      bottom: 2rem;
+      i:before { 
+        color: $white;
+        font-size: 8vh;
       }
     }
   }

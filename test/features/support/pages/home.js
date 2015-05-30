@@ -4,7 +4,7 @@ var homePage = {
 
   title: 'Rogerio Carvalho',
 
-  path: '/',
+  path: '/about',
 
   assertContent: function (callback) {
     this.browser.text('#headline h1').should.equal('rogeriocarvalho');

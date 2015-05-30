@@ -5,8 +5,12 @@ var path = require('path'),
 
 var app = express();
 
+app.get('/', function (req, res) {
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+});
+
 app.get('/about', function (req, res) {
-  res.send('About Rogerio Carvalho');
+  res.sendFile(path.resolve(__dirname, 'dist', 'about.html'));
 });
 
 app.use(express.static(path.resolve(__dirname, 'dist')));
