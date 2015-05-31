@@ -12,7 +12,7 @@ $small-primary-color: #1ea8e0;
     text-align: center;
     background-color: $small-primary-color;
     color: $white;
-    padding: 20vh 0;
+    padding: 28vh 0;
 
     h1 {
       margin: 0;
@@ -21,27 +21,29 @@ $small-primary-color: #1ea8e0;
       line-height: 18vw;
 
       em {
+        display: block;
         font-style: normal;
         font-size: 19vw;
-        display: block;
-        line-height: 16vw;
-      }
+        line-height: 16vw; }
     }
 
     p {
-      margin: 14vh 12vw 5vh;
+      margin: 8vh 12vw 5vh;
       line-height: 1.2em;
-      font-size: 5vw;
-    }
+      font-size: 5vw; }
 
     .more {
       position: absolute;
-      bottom: 3rem;
+      bottom: 1rem;
       width: 100vw;
+      
+      .glyphicons { 
+        padding: 0; }
+
       i:before { 
         color: $white;
         font-size: 11vw;
-      }
+        position: relative; }
     }
   }
 
@@ -54,21 +56,18 @@ $small-primary-color: #1ea8e0;
 
       em {
         font-size: 19vh;
-        line-height: 16vh;
-      }
+        line-height: 16vh; }
     }
 
     p {
-      margin: 10vh 28vw 5vh;
-      line-height: 5vh;
-      font-size: 4.5vh;
-    }
+      margin: 8vh 15vw 5vh;
+      line-height: 7vh;
+      font-size: 6.5vh; }
 
     .more {
-      bottom: 2rem;
       i:before { 
         color: $white;
-        font-size: 8vh;
+        font-size: 11vh;
       }
     }
   }
