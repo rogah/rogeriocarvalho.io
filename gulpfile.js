@@ -10,6 +10,7 @@ var gulp = require('gulp'),
   htmlmin = require('gulp-htmlmin'),
   minifyCss = require('gulp-minify-css'),
   sourcemaps = require('gulp-sourcemaps'),
+  autoprefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   nodemon = require('gulp-nodemon');
 
@@ -50,6 +51,7 @@ gulp.task('styles', ['clean'], function () {
     .pipe(sass({
       includePaths: ['bower_components/foundation/scss']
     }).on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(minifyCss())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./src/dist'));
