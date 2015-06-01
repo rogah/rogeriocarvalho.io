@@ -11,13 +11,17 @@ $small-primary-color: #1ea8e0;
   transform: translateY(-50%);
 }
 
+@mixin rc-contrast-theme {
+  background-color: $small-primary-color;
+  color: $white;
+}
+
 #headline {
   @media #{$small-up} {
     height: 100vh;
     width: 100vw;
     text-align: center;
-    background-color: $small-primary-color;
-    color: $white;
+    @include rc-contrast-theme;
 
     .main {
       @include vertical-align; }
@@ -37,12 +41,12 @@ $small-primary-color: #1ea8e0;
 
     p {
       margin: 6vh 12vw 5vh;
-      line-height: 1.2em;
+      line-height: 5.5vw;
       font-size: 5vw; }
 
     .more {
       position: absolute;
-      bottom: 1rem;
+      bottom: .5vh;
       width: 100vw;
       
       .glyphicons { 
@@ -56,8 +60,6 @@ $small-primary-color: #1ea8e0;
   }
 
   @media #{$small-up and $landscape} {
-    padding: 10vh 0;
-
     h1 {
       font-size: 22vh;
       line-height: 18vh;
@@ -73,9 +75,8 @@ $small-primary-color: #1ea8e0;
       font-size: 5.5vh; }
 
     .more {
-      i:before { 
-        color: $white;
-        font-size: 11vh;
+      i:before {
+        font-size: 8vh;
       }
     }
   }
