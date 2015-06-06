@@ -7,7 +7,7 @@ var homePage = {
   path: '/about',
 
   assertContent: function (callback) {
-    this.browser.text('#headline h1').should.equal('rogeriocarvalho');
+    this.browser.text('header h1').should.equal('rogeriocarvalho');
     callback();
   }
 };
