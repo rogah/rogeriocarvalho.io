@@ -1,0 +1,35 @@
+$primary-foreground-color: #fff;
+$primary-background-color: #1ea8e0;
+
+$secondary-foreground-color: #1ea8e0;
+$secondary-background-color: #fff;
+
+.primary, .secondary {
+	margin: 0 1.2rem;
+	line-height: 1.2rem;
+	text-align: center;
+
+	h1, h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 1.95rem; }
+
+	p {
+		line-height:1.2rem; }
+}
+
+.primary {
+	color: $primary-foreground-color;
+	background-color: $primary-background-color;
+
+	h1, h2 {
+		color: $primary-foreground-color; }
+}
+
+.secondary {
+	color: $secondary-foreground-color;
+	background-color: $secondary-background-color;
+
+	h1, h2 {
+		color: $secondary-foreground-color; }
+}
