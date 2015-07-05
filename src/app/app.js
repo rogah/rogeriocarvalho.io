@@ -1,5 +1,4 @@
 (function () {
-  var app = angular.module('rogeriocarvalho.io', []);
-
-  app.controller('SiteController', function () {});
+  angular.module('rogeriocarvalho.io', [])
+    .controller('SiteController', function () {});
 })();
