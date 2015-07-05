@@ -22,7 +22,7 @@ header {
       @include vertical-align; }
 
     h1 {
-      margin: 0;
+      margin: 0 0 1.5rem;
       color: $white;
       font-size: 22vw;
       line-height: 18vw;
@@ -33,11 +33,6 @@ header {
         font-size: 19vw;
         line-height: 16vw; }
     }
-
-    p {
-      margin: 6vh 12vw 5vh;
-      line-height: 5.5vw;
-      font-size: 5vw; }
 
     .more {
       position: absolute;
@@ -64,11 +59,6 @@ header {
         font-size: 19vh;
         line-height: 16vh; }
     }
-
-    p {
-      margin: 8vh 15vw 5vh;
-      line-height: 5.8vh;
-      font-size: 5.5vh; }
 
     .more {
       i:before {
