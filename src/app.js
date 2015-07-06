@@ -5,28 +5,26 @@ var path = require('path'),
 
 var app = express();
 
-var thirtyDays = 2592000000;
-
 app.get('/', function (req, res) {
   res.sendFile(path.resolve(__dirname, 'dist', 'index.html'), {
-    maxAge: thirtyDays
+    maxAge: 31536000000
   });
 });
 
 app.get('/about', function (req, res) {
   res.sendFile(path.resolve(__dirname, 'dist', 'about.html'), {
-    maxAge: thirtyDays
+    maxAge: 31536000000
   });
 });
 
 app.use(express.static(path.resolve(__dirname, 'dist'), {
   etag: true,
-  maxAge: thirtyDays
+  maxAge: 31536000000
 }));
 
 app.use(express.static(path.resolve(__dirname, '../bower_components'), {
   etag: true,
-  maxAge: thirtyDays
+  maxAge: 31536000000
 }));
 
 app.set('port', process.env.PORT || 3000);
