@@ -14,6 +14,7 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   svgmin = require('gulp-svgmin'),
+  imagemin = require('gulp-imagemin'),
   nodemon = require('gulp-nodemon');
 
 gulp.task('clean', function() {
@@ -59,6 +60,17 @@ gulp.task('styles', ['clean'], function () {
     .pipe(gulp.dest('./src/dist'));
 });
 
+gulp.task('minify:jpg', ['clean'], function () {
+  gulp.src('./src/img/**/*.jpg')
+    .pipe(imagemin({
+      progressive: true
+    }))
+    .pipe(rename(function (path) {
+      path.basename += ".min";
+    }))
+    .pipe(gulp.dest('./src/dist/img'));
+});
+
 gulp.task('minify:svg', ['clean'], function () {
   gulp.src('./src/img/**/*.svg')
     .pipe(svgmin())
@@ -93,5 +105,6 @@ gulp.task('build', [
   'minify:js',
   'minify:html', 
   'styles',
+  'minify:jpg',
   'minify:svg',
   'fonts']);
