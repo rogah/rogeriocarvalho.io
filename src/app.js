@@ -15,11 +15,11 @@ app.get('/about', function (req, res) {
 
 app.use(express.static(path.resolve(__dirname, 'dist'), {
   etag: true,
-  maxAge: 86400
+  maxAge: 86400000
 }));
 app.use(express.static(path.resolve(__dirname, '../bower_components'), {
   etag: true,
-  maxAge: 86400
+  maxAge: 86400000
 }));
 
 app.set('port', process.env.PORT || 3000);
