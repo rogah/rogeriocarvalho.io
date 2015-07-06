@@ -6,11 +6,15 @@ var path = require('path'),
 var app = express();
 
 app.get('/', function (req, res) {
-  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'), {
+    maxAge: 86400000
+  });
 });
 
 app.get('/about', function (req, res) {
-  res.sendFile(path.resolve(__dirname, 'dist', 'about.html'));
+  res.sendFile(path.resolve(__dirname, 'dist', 'about.html'), {
+    maxAge: 86400000
+  });
 });
 
 app.use(express.static(path.resolve(__dirname, 'dist'), {
