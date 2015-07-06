@@ -23,15 +23,15 @@ gulp.task('clean', function() {
 });
 
 gulp.task('lint', function() {
-  return gulp.src(['./src/**/*.js', '!./src/dist/**/*.js', '!./src/scripts/**/*.js'])
+  return gulp.src(['./gulpfile.js', './src/**/*.js', '!./src/dist/**/*.js', '!./src/scripts/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 gulp.task('beautify:js', ['lint'], function() {
-  return gulp.src(['./gulpfile.js', './src/**/*.js', '!./src/dist/**/*.js', '!./src/scripts/**/*.js'])
+  return gulp.src(['./src/**/*.js', '!./src/dist/**/*.js', '!./src/scripts/**/*.js'])
     .pipe(beautify({config: '.jsbeautifyrc', mode: 'VERIFY_AND_WRITE'}))
-    .pipe(gulp.dest('./src'))
+    .pipe(gulp.dest('./src'));
 });
 
 gulp.task('minify:js', ['clean'], function () {
@@ -39,7 +39,7 @@ gulp.task('minify:js', ['clean'], function () {
     .pipe(concat('app.js'))
     .pipe(ngAnnotate())
     .pipe(uglify())
-    .pipe(gulp.dest('./src/dist'))
+    .pipe(gulp.dest('./src/dist'));
 });
 
 gulp.task('minify:html', ['clean'], function () {
@@ -61,10 +61,8 @@ gulp.task('styles', ['clean'], function () {
 });
 
 gulp.task('minify:jpg', ['clean'], function () {
-  gulp.src('./src/img/**/*.jpg')
-    .pipe(imagemin({
-      progressive: true
-    }))
+  return gulp.src('./src/img/**/*.jpg')
+    .pipe(imagemin({progressive: true}))
     .pipe(rename(function (path) {
       path.basename += ".min";
     }))
@@ -72,7 +70,7 @@ gulp.task('minify:jpg', ['clean'], function () {
 });
 
 gulp.task('minify:svg', ['clean'], function () {
-  gulp.src('./src/img/**/*.svg')
+  return gulp.src('./src/img/**/*.svg')
     .pipe(svgmin())
     .pipe(rename(function (path) {
       path.basename += ".min";
@@ -90,7 +88,7 @@ gulp.task('server', ['build'], function () {
     script: './src/server.js',
     ext: 'html js scss css', 
     ignore: ['ignored.js'],
-    watch: ['./gulpfile.js', './src', './test'],
+    watch: ['./src', './test'],
     tasks: ['build']
   })
   .on('restart', function () {
