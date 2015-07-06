@@ -17,20 +17,25 @@ var gulp = require('gulp'),
   imagemin = require('gulp-imagemin'),
   nodemon = require('gulp-nodemon');
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
   return gulp.src('./src/dist')
-    .pipe(rimraf({force: true}));
+    .pipe(rimraf({
+      force: true
+    }));
 });
 
-gulp.task('lint', function() {
+gulp.task('lint', function () {
   return gulp.src(['./src/**/*.js', '!./src/dist/**/*.js', '!./src/scripts/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('beautify:js', ['lint'], function() {
+gulp.task('beautify:js', ['lint'], function () {
   return gulp.src(['./gulpfile.js', './src/**/*.js', '!./src/dist/**/*.js', '!./src/scripts/**/*.js'])
-    .pipe(beautify({config: '.jsbeautifyrc', mode: 'VERIFY_AND_WRITE'}))
+    .pipe(beautify({
+      config: '.jsbeautifyrc',
+      mode: 'VERIFY_AND_WRITE'
+    }))
     .pipe(gulp.dest('./src'))
 });
 
@@ -44,7 +49,9 @@ gulp.task('minify:js', ['clean'], function () {
 
 gulp.task('minify:html', ['clean'], function () {
   return gulp.src('./src/app/**/*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(gulp.dest('./src/dist'));
 });
 
@@ -86,25 +93,26 @@ gulp.task('fonts', ['clean'], function () {
 });
 
 gulp.task('server', ['build'], function () {
-  return nodemon({ 
-    script: './src/server.js',
-    ext: 'html js scss css', 
-    ignore: ['ignored.js'],
-    watch: ['./gulpfile.js', './src', './test'],
-    tasks: ['build']
-  })
-  .on('restart', function () {
-    console.log('Server restarted.');
-  });
+  return nodemon({
+      script: './src/server.js',
+      ext: 'html js scss css',
+      ignore: ['ignored.js'],
+      watch: ['./gulpfile.js', './src', './test'],
+      tasks: ['build']
+    })
+    .on('restart', function () {
+      console.log('Server restarted.');
+    });
 });
 
 gulp.task('build', [
-  'clean', 
-  'lint', 
-  'beautify:js', 
+  'clean',
+  'lint',
+  'beautify:js',
   'minify:js',
-  'minify:html', 
+  'minify:html',
   'styles',
   'minify:jpg',
   'minify:svg',
-  'fonts']);
+  'fonts'
+]);
