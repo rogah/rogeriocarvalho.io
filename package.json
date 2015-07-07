@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "bower": "^1.4.1",
+    "cors": "^2.7.1",
     "express": "^4.12.4",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.3.0",
