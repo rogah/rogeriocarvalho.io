@@ -15,6 +15,7 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   svgmin = require('gulp-svgmin'),
   imagemin = require('gulp-imagemin'),
+  bump = require('gulp-bump'),
   nodemon = require('gulp-nodemon');
 
 gulp.task('clean', function() {
@@ -94,6 +95,24 @@ gulp.task('server', ['build'], function () {
   .on('restart', function () {
     console.log('Server restarted.');
   });
+});
+
+gulp.task('ver:patch', function(){
+  gulp.src('./package.json')
+  .pipe(bump())
+  .pipe(gulp.dest('./'));
+});
+
+gulp.task('ver:minor', function(){
+  gulp.src('./package.json')
+  .pipe(bump({type:'minor'}))
+  .pipe(gulp.dest('./'));
+});
+
+gulp.task('ver:major', function(){
+  gulp.src('./package.json')
+  .pipe(bump({type:'major'}))
+  .pipe(gulp.dest('./'));
 });
 
 gulp.task('build', [

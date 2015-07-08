@@ -1,6 +1,6 @@
 {
   "name": "rogeriocarvalho.io",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rogerio Carvalho",
   "keywords": [
     "Rogerio",
@@ -8,11 +8,16 @@
     "Carvalho",
     "Rogerio Carvalho"
   ],
-  "author": "Rogerio Carvalho",
+  "author": "Rogerio Carvalho <rogerio.w.carvalho@gmail.com> (http://rogeriocarvalho.io)",
+  "homepage": "http://rogeriocarvalho.io",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/rogah/rogeriocarvalho.io.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/rogah/rogeriocarvalho.io/issues",
+    "email" : "rogerio.w.carvalho@gmail.com"
   },
   "scripts": {
     "env": "env",
@@ -24,10 +29,12 @@
   },
   "dependencies": {
     "bower": "^1.4.1",
+    "compression": "^1.5.1",
     "cors": "^2.7.1",
     "express": "^4.12.4",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.3.0",
+    "gulp-bump": "^0.3.1",
     "gulp-concat": "^2.5.2",
     "gulp-htmlmin": "^1.1.1",
     "gulp-imagemin": "^2.3.0",
@@ -41,7 +48,8 @@
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-svgmin": "^1.1.2",
-    "gulp-uglify": "^1.2.0"
+    "gulp-uglify": "^1.2.0",
+    "jade": "^1.11.0"
   },
   "devDependencies": {
     "cucumber": "^0.4.9",
@@ -52,5 +60,6 @@
   "engines": {
     "iojs": "2.0.x",
     "npm": "2.10.x"
-  }
+  },
+  "license": "MIT"
 }
