@@ -50,7 +50,7 @@ gulp.task('minify:html', ['clean'], function () {
 });
 
 gulp.task('styles', ['clean'], function () {
-  return gulp.src('./src/styles/**/*.scss')
+  return gulp.src(['./src/styles/**/*.scss', '!./src/styles/**/_*.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: ['bower_components/foundation/scss']
