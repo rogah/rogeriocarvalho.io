@@ -30,16 +30,18 @@ gulp.task('lint', function() {
 });
 
 gulp.task('beautify:js', ['lint'], function() {
-  return gulp.src(['./src/**/*.js', '!./src/dist/**/*.js', '!./src/scripts/**/*.js'])
+  return gulp.src(['./src/**/*.js', '!./src/dist/**/*.js'])
     .pipe(beautify({config: '.jsbeautifyrc', mode: 'VERIFY_AND_WRITE'}))
     .pipe(gulp.dest('./src'));
 });
 
 gulp.task('minify:js', ['clean'], function () {
   return gulp.src(['./src/app/app.js', './src/app/**/*.js'])
+    .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
     .pipe(ngAnnotate())
     .pipe(uglify())
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./src/dist'));
 });
 
@@ -57,7 +59,7 @@ gulp.task('styles', ['clean'], function () {
     }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(minifyCss())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./src/dist'));
 });
 

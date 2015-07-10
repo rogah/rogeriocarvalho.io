@@ -39,14 +39,10 @@ header {
       bottom: .5vh;
       width: 100vw;
       animation: swing 1.5s infinite;
-      
-      .glyphicons { 
-        padding: 0; }
 
-      i:before { 
-        color: $white;
+      span {
         font-size: 11vw;
-        position: relative; }
+        color: $white; }
     }
   }
 
@@ -61,9 +57,7 @@ header {
     }
 
     .more {
-      i:before {
-        font-size: 8vh;
-      }
+      span { font-size: 8vh; }
     }
   }
 }

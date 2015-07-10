@@ -4,6 +4,11 @@ $primary-background-color: #1ea8e0;
 $secondary-foreground-color: #1ea8e0;
 $secondary-background-color: #fff;
 
+html, html a {
+  -webkit-font-smoothing: antialiased !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
 .primary, .secondary {
 	position: relative;
 	text-align: center;
