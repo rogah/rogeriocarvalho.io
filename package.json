@@ -1,6 +1,6 @@
 {
   "name": "rogeriocarvalho.io",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Rogerio Carvalho",
   "keywords": [
     "Rogerio",
@@ -16,11 +16,14 @@
     "url": "https://github.com/rogah/rogeriocarvalho.io.git"
   },
   "bugs": {
-    "url" : "https://github.com/rogah/rogeriocarvalho.io/issues",
-    "email" : "rogerio.w.carvalho@gmail.com"
+    "url": "https://github.com/rogah/rogeriocarvalho.io/issues",
+    "email": "rogerio.w.carvalho@gmail.com"
   },
   "scripts": {
     "env": "env",
+    "ver:patch": "gulp ver:patch",
+    "ver:minor": "gulp ver:minor",
+    "ver:major": "gulp ver:major",
     "build": "gulp build",
     "serve": "gulp server",
     "postinstall": "bower install && npm run build",
