@@ -2,6 +2,10 @@
 
 var gulp = require('gulp'),
   del = require('del'),
+  browserify = require('browserify'),
+  source = require('vinyl-source-stream'),
+  buffer = require('vinyl-buffer'),
+  gutil = require('gulp-util'),
   rename = require('gulp-rename'),
   jshint = require('gulp-jshint'),
   beautify = require('gulp-jsbeautifier'),
@@ -41,12 +45,17 @@ gulp.task('beautify:js', ['lint'], function () {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('minify:js', ['clean'], function () {
-  return gulp.src(['./src/app/app.js', './src/app/**/*.js'])
+gulp.task('browserify', ['clean', 'lint'], function () {
+  return browserify({
+      entries: './src/app/app.js',
+      debug: true
+    }).bundle()
+    .pipe(source('app.bundle.js'))
+    .pipe(buffer())
     .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
     .pipe(ngAnnotate())
     .pipe(uglify())
+    .on('error', gutil.log)
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./dist'));
 });
@@ -135,7 +144,7 @@ gulp.task('build', [
   'clean',
   'lint',
   'beautify:js',
-  'minify:js',
+  'browserify',
   'minify:html',
   'styles',
   'minify:jpg',
