@@ -26,13 +26,14 @@
     "ver:major": "gulp ver:major",
     "build": "gulp build",
     "serve": "gulp server",
-    "postinstall": "bower install && npm run build",
+    "postinstall": "npm run build",
     "start": "npm run serve",
     "test": "cucumber.js test/features -r test/features/step_definitions -r test/features/support -f pretty"
   },
   "dependencies": {
     "compression": "^1.5.1",
     "cors": "^2.7.1",
+    "del": "^1.2.0",
     "express": "^4.12.4",
     "foundation-sites": "^5.5.2",
     "gulp": "^3.8.11",
@@ -47,7 +48,6 @@
     "gulp-ng-annotate": "^0.5.3",
     "gulp-nodemon": "^2.0.3",
     "gulp-rename": "^1.2.2",
-    "gulp-rimraf": "^0.1.1",
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-svgmin": "^1.1.2",

@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-  rimraf = require('gulp-rimraf'),
+  del = require('del'),
   rename = require('gulp-rename'),
   jshint = require('gulp-jshint'),
   beautify = require('gulp-jsbeautifier'),
@@ -18,21 +18,27 @@ var gulp = require('gulp'),
   bump = require('gulp-bump'),
   nodemon = require('gulp-nodemon');
 
-gulp.task('clean', function() {
-  return gulp.src('./dist')
-    .pipe(rimraf({force: true}));
+gulp.task('clean', function (callback) {
+  del(['./dist'], {
+    force: true
+  }, callback);
 });
 
-gulp.task('lint', function() {
-  return gulp.src(['./gulpfile.js', './src/**/*.js', '!./dist/**/*.js', '!./src/scripts/**/*.js'])
+gulp.task('lint', function () {
+  return gulp.src(['./gulpfile.js', './src/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('beautify:js', ['lint'], function() {
-  return gulp.src(['./src/**/*.js', '!./dist/**/*.js'])
-    .pipe(beautify({config: '.jsbeautifyrc', mode: 'VERIFY_AND_WRITE'}))
-    .pipe(gulp.dest('./src'));
+gulp.task('beautify:js', ['lint'], function () {
+  return gulp.src(['./gulpfile.js', './src/**/*.js'], {
+      base: './'
+    })
+    .pipe(beautify({
+      config: '.jsbeautifyrc',
+      mode: 'VERIFY_AND_WRITE'
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('minify:js', ['clean'], function () {
@@ -47,7 +53,9 @@ gulp.task('minify:js', ['clean'], function () {
 
 gulp.task('minify:html', ['clean'], function () {
   return gulp.src('./src/app/**/*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(gulp.dest('./dist'));
 });
 
@@ -65,7 +73,9 @@ gulp.task('styles', ['clean'], function () {
 
 gulp.task('minify:jpg', ['clean'], function () {
   return gulp.src('./src/img/**/*.jpg')
-    .pipe(imagemin({progressive: true}))
+    .pipe(imagemin({
+      progressive: true
+    }))
     .pipe(rename(function (path) {
       path.basename += ".min";
     }))
@@ -87,43 +97,48 @@ gulp.task('fonts', ['clean'], function () {
 });
 
 gulp.task('server', ['build'], function () {
-  return nodemon({ 
-    script: './src/server.js',
-    ext: 'html js scss css', 
-    ignore: ['ignored.js'],
-    watch: ['./src', './test'],
-    tasks: ['build']
-  })
-  .on('restart', function () {
-    console.log('Server restarted.');
-  });
+  return nodemon({
+      script: './src/server.js',
+      ext: 'html js scss css',
+      ignore: ['ignored.js'],
+      watch: ['gulpfile.js', './src', './test'],
+      tasks: ['build']
+    })
+    .on('restart', function () {
+      console.log('Server restarted.');
+    });
 });
 
-gulp.task('ver:patch', function(){
+gulp.task('ver:patch', function () {
   gulp.src('./package.json')
-  .pipe(bump())
-  .pipe(gulp.dest('./'));
+    .pipe(bump())
+    .pipe(gulp.dest('./'));
 });
 
-gulp.task('ver:minor', function(){
+gulp.task('ver:minor', function () {
   gulp.src('./package.json')
-  .pipe(bump({type:'minor'}))
-  .pipe(gulp.dest('./'));
+    .pipe(bump({
+      type: 'minor'
+    }))
+    .pipe(gulp.dest('./'));
 });
 
-gulp.task('ver:major', function(){
+gulp.task('ver:major', function () {
   gulp.src('./package.json')
-  .pipe(bump({type:'major'}))
-  .pipe(gulp.dest('./'));
+    .pipe(bump({
+      type: 'major'
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('build', [
-  'clean', 
-  'lint', 
-  'beautify:js', 
+  'clean',
+  'lint',
+  'beautify:js',
   'minify:js',
-  'minify:html', 
+  'minify:html',
   'styles',
   'minify:jpg',
   'minify:svg',
-  'fonts']);
+  'fonts'
+]);
