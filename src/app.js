@@ -23,7 +23,7 @@ app.set('etag', 'strong');
 app.set('view engine', 'jade');
 
 app.get('/', function (req, res) {
-  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'), {
+  res.sendFile(path.resolve(__dirname, '../dist', 'index.html'), {
     maxAge: 31536000000
   });
 });
@@ -33,11 +33,7 @@ app.get('/about', function (req, res) {
   res.render('index');
 });
 
-app.use(express.static(path.resolve(__dirname, 'dist'), {
-  maxAge: 31536000000
-}));
-
-app.use(express.static(path.resolve(__dirname, '../bower_components'), {
+app.use(express.static(path.resolve(__dirname, '../dist'), {
   maxAge: 31536000000
 }));
 

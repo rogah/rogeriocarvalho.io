@@ -19,18 +19,18 @@ var gulp = require('gulp'),
   nodemon = require('gulp-nodemon');
 
 gulp.task('clean', function() {
-  return gulp.src('./src/dist')
+  return gulp.src('./dist')
     .pipe(rimraf({force: true}));
 });
 
 gulp.task('lint', function() {
-  return gulp.src(['./gulpfile.js', './src/**/*.js', '!./src/dist/**/*.js', '!./src/scripts/**/*.js'])
+  return gulp.src(['./gulpfile.js', './src/**/*.js', '!./dist/**/*.js', '!./src/scripts/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 gulp.task('beautify:js', ['lint'], function() {
-  return gulp.src(['./src/**/*.js', '!./src/dist/**/*.js'])
+  return gulp.src(['./src/**/*.js', '!./dist/**/*.js'])
     .pipe(beautify({config: '.jsbeautifyrc', mode: 'VERIFY_AND_WRITE'}))
     .pipe(gulp.dest('./src'));
 });
@@ -42,25 +42,25 @@ gulp.task('minify:js', ['clean'], function () {
     .pipe(ngAnnotate())
     .pipe(uglify())
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./src/dist'));
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('minify:html', ['clean'], function () {
   return gulp.src('./src/app/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('./src/dist'));
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('styles', ['clean'], function () {
   return gulp.src(['./src/styles/**/*.scss', '!./src/styles/**/_*.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: ['bower_components/foundation/scss']
+      includePaths: ['node_modules/foundation-sites/scss']
     }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(minifyCss())
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./src/dist'));
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('minify:jpg', ['clean'], function () {
@@ -69,7 +69,7 @@ gulp.task('minify:jpg', ['clean'], function () {
     .pipe(rename(function (path) {
       path.basename += ".min";
     }))
-    .pipe(gulp.dest('./src/dist/img'));
+    .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('minify:svg', ['clean'], function () {
@@ -78,12 +78,12 @@ gulp.task('minify:svg', ['clean'], function () {
     .pipe(rename(function (path) {
       path.basename += ".min";
     }))
-    .pipe(gulp.dest('./src/dist/img'));
+    .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('fonts', ['clean'], function () {
   return gulp.src('./src/fonts/**/*')
-    .pipe(gulp.dest('./src/dist/fonts'));
+    .pipe(gulp.dest('./dist/fonts'));
 });
 
 gulp.task('server', ['build'], function () {
