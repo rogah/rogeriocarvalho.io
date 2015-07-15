@@ -33,10 +33,12 @@
   "dependencies": {
     "angular": "^1.4.2",
     "browserify": "^10.2.6",
+    "browserify-shim": "^3.8.9",
     "compression": "^1.5.1",
     "cors": "^2.7.1",
     "del": "^1.2.0",
     "express": "^4.12.4",
+    "fastclick": "^1.0.6",
     "foundation-sites": "^5.5.2",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.3.0",
@@ -56,6 +58,7 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
     "jade": "^1.11.0",
+    "jquery": "^2.1.4",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -69,5 +72,18 @@
     "iojs": "2.0.x",
     "npm": "2.10.x"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "foundation": "./node_modules/foundation-sites/js/foundation.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "foundation": "foundation"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
 }
