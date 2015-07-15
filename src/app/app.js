@@ -1,12 +1,14 @@
 'use strict';
 
-var angular = require('angular'),
-  $ = require('jquery');
+var $ = require('jquery');
 
 require('fastclick');
 require('foundation');
 
 $(document).foundation();
 
+var angular = require('angular');
+
 angular.module('rogeriocarvalho.io', [])
-  .controller('SiteController', function () {});
+  .controller('SiteController', function () {})
+  .directive('skillChart', require('./charts/directives/skill-chart'));
