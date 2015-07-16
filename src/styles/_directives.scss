@@ -1,3 +1,15 @@
 skill-chart {
   display: block;
 }
+
+skill-chart .chart-base {
+  fill: #e4eaec;
+}
+
+skill-chart .chart-slice {
+  fill: #9ac6e2;
+}
+
+skill-chart text {
+  fill: $primary-foreground-color;
+}

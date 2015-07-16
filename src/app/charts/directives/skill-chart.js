@@ -22,30 +22,29 @@ module.exports = function () {
   }
 
   function link(scope, element, attrs) {
-    element.empty();
 
     var width = element.width(),
       height = element.width(),
       radius = Math.min(width, height) / 2,
       donutWidth = (10 * Math.min(width, height)) / 100,
-      innerWidth = ((7 * Math.min(width, height)) / 100) + (((3 * Math.min(width, height)) / 100) / 2),
+      innerWidth = 0.8 * donutWidth,
+      innerOffset = 0.2 * donutWidth,
       outterWidth = donutWidth,
+      cornerRadius = Math.min(20, Math.max(4, 100 - attrs.value)),
       τ = 2 * Math.PI;
-
-    console.log('{ w:' + width + ', h:' + height + '}');
 
     var scale = d3.scale.linear().domain([0, 100]).range([0, τ]);
 
     var innerRadius = radius - donutWidth;
 
     var baseArc = d3.svg.arc()
-      .innerRadius(innerRadius)
+      .innerRadius(innerRadius + innerOffset)
       .outerRadius(innerRadius + innerWidth);
 
     var sliceArc = d3.svg.arc()
       .innerRadius(innerRadius)
       .outerRadius(innerRadius + outterWidth)
-      .cornerRadius(20);
+      .cornerRadius(cornerRadius);
 
     var svg = d3.select(element[0]).append("svg")
       .attr("width", width)
@@ -56,10 +55,10 @@ module.exports = function () {
 
     svg.append("path")
       .datum({
-        startAngle: 0,
-        endAngle: τ
+        startAngle: scale(0),
+        endAngle: scale(100)
       })
-      .style("fill", "#e4eaec")
+      .attr('class', 'chart-base')
       .attr("d", baseArc);
 
     svg.append("path")
@@ -67,19 +66,21 @@ module.exports = function () {
         startAngle: scale(0),
         endAngle: scale(attrs.value)
       })
-      .style("fill", "#9ac6e2")
+      .attr('class', 'chart-slice')
       .attr("d", sliceArc);
 
-    var fontMeasure = Math.round(scale(radius) / 2) + 1;
+    var glyphMeasure = Math.ceil(scale(radius - donutWidth));
 
     svg.append("text")
       .attr("dy", ".45em")
       .style("text-anchor", "middle")
-      .style("font-size", fontMeasure + "em")
+      .style("font-size", glyphMeasure + "em")
       .attr("class", "glyph icon-")
       .text(function (d) {
         return attrs.fontLigatures;
       });
+
+    element.append('<span class="legend">' + attrs.value + '%</span>');
   }
 
   return {
