@@ -18,7 +18,7 @@ module.exports = function () {
       .attr("perserveAspectRatio", "xMinYMid")
       .call(resize);
 
-    d3.select(window).on("resize.foo", resize);
+    d3.select(window).on('resize.' + svg.attr('data-chart-id'), resize);
   }
 
   function link(scope, element, attrs) {
@@ -49,6 +49,7 @@ module.exports = function () {
     var svg = d3.select(element[0]).append("svg")
       .attr("width", width)
       .attr("height", height)
+      .attr('data-chart-id', new Date().getTime())
       .call(responsivefy)
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
