@@ -37,6 +37,14 @@ module.exports = function () {
 
     var innerRadius = radius - donutWidth;
 
+    var svg = d3.select(element[0]).append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr('data-chart-id', new Date().getTime())
+      .call(responsivefy)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
     var baseArc = d3.svg.arc()
       .innerRadius(innerRadius + innerOffset)
       .outerRadius(innerRadius + innerWidth);
@@ -45,14 +53,6 @@ module.exports = function () {
       .innerRadius(innerRadius)
       .outerRadius(innerRadius + outterWidth)
       .cornerRadius(cornerRadius);
-
-    var svg = d3.select(element[0]).append("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr('data-chart-id', new Date().getTime())
-      .call(responsivefy)
-      .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
     svg.append("path")
       .datum({
