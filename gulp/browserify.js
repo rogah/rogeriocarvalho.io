@@ -4,15 +4,14 @@ var browserify = require('browserify'),
 
 module.exports = function (gulp, plugins) {
   return function () {
-    return browserify({
-        entries: './src/app/app.js',
-        debug: true
+    return browserify('./src/app/app.js', {
+        debug: false
       }).bundle()
       .pipe(source('app.bundle.js'))
       .pipe(buffer())
       //.pipe(plugins.sourcemaps.init())
       .pipe(plugins.ngAnnotate())
-      //.pipe(plugins.uglify())
+      .pipe(plugins.uglify())
       .on('error', plugins.util.log)
       //.pipe(plugins.sourcemaps.write('./maps'))
       .pipe(gulp.dest('./dist'));
