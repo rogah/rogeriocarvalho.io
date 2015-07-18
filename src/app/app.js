@@ -1,13 +1,12 @@
 'use strict';
 
-var $ = require('jquery');
+var $ = require('jquery'),
+  angular = require('angular');
 
 require('fastclick');
 require('foundation');
 
 $(document).foundation();
-
-var angular = require('angular');
 
 angular.module('rogeriocarvalho.io', [])
   .controller('SiteController', function () {})

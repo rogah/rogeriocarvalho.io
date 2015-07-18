@@ -1,6 +1,7 @@
 module.exports = function (gulp, plugins) {
   return function () {
     return gulp.src('./src/images/**/*.jpg')
+      .pipe(plugins.cached('minify:jpg'))
       .pipe(plugins.imagemin({
         progressive: true
       }))

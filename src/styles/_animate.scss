@@ -1,0 +1,84 @@
+@mixin animate {
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-delay: 3s;
+  @include animate;
+}
+
+@keyframes slideLeft {
+  0%, 40% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-left {
+  animation-name: slideLeft;
+  animation-duration: 2s;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  40% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-down {
+  animation-name: fadeInDown;
+  @include animate;
+  animation-duration: 2s;
+}
+
+@keyframes zoomIn {
+  0%, 50% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  70% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation-name: zoomIn;
+  @include animate;
+}
