@@ -21,10 +21,17 @@ header {
         line-height: 16vw; }
     }
 
+    p {
+      animation-delay: .5s; }
+
     .more {
       position: absolute;
       bottom: .5vh;
       width: 100vw;
+      animation-delay: 1s;
+
+      div {
+        animation-delay: 2s; }
 
       span {
         font-size: 11vw;
