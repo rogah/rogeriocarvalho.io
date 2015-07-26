@@ -8,6 +8,8 @@ module.exports = (function () {
     $window = null,
     windowSize = null,
     currentIndex = -1,
+    currentOffsetTop = -1,
+    extraScroll = 0,
     settings = {
       minHeight: 500,
       speed: 350,
@@ -22,7 +24,8 @@ module.exports = (function () {
 
     $items.each(function () {
       var $item = $(this);
-      $item.data('height', $item.height())
+      $item
+        .data('height', $item.height())
         .on('click', 'skill-chart', function () {
           if (currentIndex === $item.index()) {
             collapse($item);
@@ -47,7 +50,19 @@ module.exports = (function () {
 
   function expand($item) {
     var previewItem = preview.create($item, settings);
-    currentIndex = previewItem.getIndex();
+
+    var index = previewItem.getIndex(),
+      offsetTop = previewItem.getOffsetTop();
+
+    if (currentIndex !== index) {
+      var $currentItem = $items.eq(currentIndex);
+      collapse($currentItem);
+    }
+
+    currentIndex = index;
+    currentOffsetTop = offsetTop;
+
+    previewItem.setScroll(extraScroll);
     previewItem.expand(windowSize);
   }
 
@@ -55,6 +70,7 @@ module.exports = (function () {
     var previewItem = preview.create($item, settings);
     previewItem.collapse();
     currentIndex = -1;
+    currentOffsetTop = -1;
   }
 
   return {
