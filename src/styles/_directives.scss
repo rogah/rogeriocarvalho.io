@@ -1,15 +1,32 @@
 skill-chart {
   display: block;
+
+  .chart-base {
+    fill: #e4eaec;
+  }
+
+  .chart-slice {
+    fill: #9ac6e2;
+  }
+
+  text {
+    fill: $primary-foreground-color;
+  }
 }
 
-skill-chart .chart-base {
-  fill: #e4eaec;
-}
+.preview {
+  background-color: red;
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: 100%;
+  margin-top: 10px;
+  height: 0;
+  overflow: hidden;
 
-skill-chart .chart-slice {
-  fill: #9ac6e2;
-}
-
-skill-chart text {
-  fill: $primary-foreground-color;
+  .inner {
+    background-color: green;
+    padding: 50px 30px;
+    height: 100%;
+  }
 }

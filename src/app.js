@@ -3,13 +3,15 @@
 var path = require('path'),
   compress = require('compression'),
   cors = require('cors'),
-  express = require('express');
+  express = require('express'),
+  favicon = require('serve-favicon');
 
 var pkg = require('../package.json'),
   version = pkg.version || (new Date().getTime());
 
 var app = express();
 
+app.use(favicon(path.resolve(__dirname, '../dist', 'favicon.svg')));
 app.use(compress());
 app.use(cors());
 

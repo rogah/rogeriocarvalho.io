@@ -14,6 +14,7 @@ gulp.task('browserify', ['clean', 'lint'], getTask('browserify'));
 gulp.task('minify:html', ['clean'], getTask('minify-html'));
 gulp.task('styles', ['clean'], getTask('styles'));
 gulp.task('minify:jpg', ['clean'], getTask('minify-jpg'));
+gulp.task('favicon', ['clean'], getTask('favicon'));
 gulp.task('minify:svg', ['clean'], getTask('minify-svg'));
 gulp.task('fonts', ['clean'], getTask('fonts'));
 gulp.task('ver:patch', getTask('ver-patch'));
@@ -30,6 +31,7 @@ gulp.task('build', [
   'minify:html',
   'styles',
   'minify:jpg',
+  'favicon',
   'minify:svg',
   'fonts'
 ]);

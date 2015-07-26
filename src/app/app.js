@@ -25,4 +25,5 @@ $(function () {
 
 angular.module('rogeriocarvalho.io', [])
   .controller('SiteController', function () {})
-  .directive('skillChart', require('./charts/directives/skill-chart'));
+  .directive('skillChart', require('./common/charts/directives/skill-chart'))
+  .directive('skillPreview', require('./common/charts/directives/skill-preview'));

@@ -13,6 +13,27 @@ html(ng-app="rogeriocarvalho.io")
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet', type='text/css')
     link(href='/app.css?v=#{version}', rel='stylesheet', type='text/css')
 
+    link(rel="apple-touch-icon", sizes="57x57", href="/apple-touch-icon-57x57.png")
+    link(rel="apple-touch-icon", sizes="60x60", href="/apple-touch-icon-60x60.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="/apple-touch-icon-72x72.png")
+    link(rel="apple-touch-icon", sizes="76x76", href="/apple-touch-icon-76x76.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="/apple-touch-icon-114x114.png")
+    link(rel="apple-touch-icon", sizes="120x120", href="/apple-touch-icon-120x120.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="/apple-touch-icon-144x144.png")
+    link(rel="apple-touch-icon", sizes="152x152", href="/apple-touch-icon-152x152.png")
+    link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon-180x180.png")
+    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="/favicon-194x194.png", sizes="194x194")
+    link(rel="icon", type="image/png", href="/favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/png", href="/android-chrome-192x192.png", sizes="192x192")
+    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+    link(rel="icon", type="image/svg+xml", href="/favicon.svg", sizes="any")
+    link(rel="mask-icon", href="/pinned-icon.svg", color="#666666")
+    link(rel="manifest", href="/manifest.json")
+    meta(name="msapplication-TileColor", content="#da532c")
+    meta(name="msapplication-TileImage", content="/mstile-144x144.png")
+    meta(name="theme-color", content="#ffffff")
+
     script(type="application/ld+json").
       {
         "@context": "http://schema.org/",
@@ -80,9 +101,23 @@ html(ng-app="rogeriocarvalho.io")
           p Tap to see more details on each platform specifics.
       .row
         .small-10.small-offset-1.medium-8.medium-offset-2.columns
-          ul.small-block-grid-2.medium-block-grid-3
+          ul.small-block-grid-2.medium-block-grid-3(skill-preview)
             li
               skill-chart(value='90', font-ligatures='javascript')
+              .preview
+                .inner
+                  span.close
+                  .logo
+                    i.icon- javascript
+                  .details
+                    h3 javascript
+                    ul
+                      li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      li Pellentesque lacinia quam a metus dignissim finibus.
+                      li In cursus justo eu rhoncus tincidunt.
+                      li Nulla a lectus ut orci varius lobortis.
+                      li Nunc quis augue vitae tortor dignissim sodales.
+                      li Fusce a tortor eget enim tristique molestie
             li
               skill-chart(value='100', font-ligatures='msnet')
             li
