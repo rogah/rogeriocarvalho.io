@@ -25,7 +25,8 @@ module.exports = (function () {
     $items.each(function () {
       var $item = $(this);
       $item
-        .data('height', $item.height())
+        .data('offsetTop', $item.offset().top)
+        .data('height', $item.outerHeight())
         .on('click', 'skill-chart', function () {
           if (currentIndex === $item.index()) {
             collapse($item);
@@ -57,12 +58,16 @@ module.exports = (function () {
     if (currentIndex !== index) {
       var $currentItem = $items.eq(currentIndex);
       collapse($currentItem);
+
+      if (offsetTop > currentOffsetTop) {
+        extraScroll = $currentItem.outerHeight();
+      }
     }
 
     currentIndex = index;
     currentOffsetTop = offsetTop;
 
-    previewItem.setScroll(extraScroll);
+    previewItem.setScroll(0);
     previewItem.expand(windowSize);
   }
 

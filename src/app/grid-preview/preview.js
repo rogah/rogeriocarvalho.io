@@ -17,12 +17,8 @@ Preview.prototype = {
     return this.$item.offset().top;
   },
 
-  getPreviewOffsetTop: function () {
-    return this.$preview.offset().top;
-  },
-
   setScroll: function (value) {
-    this.scrollExtra = 0;
+    this.scrollExtra = value;
   },
 
   expand: function (windowSize) {
@@ -79,12 +75,12 @@ Preview.prototype = {
 
   _scrollPosition: function (windowSize) {
     var offsetTop = this.$item.data('offsetTop'),
-      previewOffsetTop = this.getPreviewOffsetTop(),
+      previewOffsetTop = this.$preview.offset().top,
       scrollTo = 0;
 
-    console.log(this.height);
-
-    if (this.previewHeight + this.$item.data('height') + this.settings.margin <= windowSize.height) {
+    //console.log(this.scrollExtra);
+    //this.previewHeight + this.$item.data('height')
+    if (this.$item.outerHeight() + this.settings.margin <= windowSize.height) {
       scrollTo = offsetTop;
     } else if (this.previewHeight < windowSize.height) {
       scrollTo = (previewOffsetTop - this.scrollExtra) - (windowSize.height - this.previewHeight);
@@ -92,8 +88,14 @@ Preview.prototype = {
       scrollTo = (previewOffsetTop - this.scrollExtra);
     }
 
+    //console.log(scrollTo);
+
+    var test = this.$item.data('offsetTop') - (windowSize.height - this.height); // + this.$item.outerHeight();
+
+    console.log(test);
+
     $('html, body').animate({
-      scrollTop: scrollTo
+      scrollTop: test
     }, this.settings.speed);
   }
 };
