@@ -2,7 +2,7 @@ doctype html
 html(ng-app="rogeriocarvalho.io")
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
     meta(name='description', content="Rogerio Carvalho's professional experiences and his passion about UI/UX Design, front-end development, design patterns, test driven approaches and agile methodologies.")
     meta(name='author', content='Rogerio Wenzel Carvalho')
     meta(name='keywords', content='rogeriocarvalho.io, rogerio, wenzel, carvalho, rogerio carvalho, rogerio wenzel carvalho')
@@ -100,84 +100,113 @@ html(ng-app="rogeriocarvalho.io")
         .small-10.small-offset-1.columns
           p Tap to see more details on each platform specifics.
       .row
-        .small-10.small-offset-1.medium-8.medium-offset-2.columns
-          ul.small-block-grid-2.medium-block-grid-3(skill-preview)
+        .small-12.medium-8.columns
+          ul.small-block-grid-1.medium-block-grid-2(skill-preview)
             li
               skill-chart(value='90', font-ligatures='javascript')
-              .preview
-                .inner
-                  span.close
-                  .logo
-                    i.icon- javascript
-                  .details
-                    h3 javascript
-                    ul
-                      li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      li Pellentesque lacinia quam a metus dignissim finibus.
-                      li In cursus justo eu rhoncus tincidunt.
-                      li Nulla a lectus ut orci varius lobortis.
-                      li Nunc quis augue vitae tortor dignissim sodales.
-                      li Fusce a tortor eget enim tristique molestie
+              div.topics
+                ul
+                  li Object-Oriented
+                  li Prototype
+                  li Object Literal
+                  li Namespace Pattern
+                  li Module Pattern
+                  li Sandbox Pattern
+                  li Chaining Pattern
+                  li Browser Patterns (Events, Long-Running Scripts, Remote Scripting, Lazy-Loading, Loading on demand, Preloading JavaScript)
+                  li Mix-ins
+                  li Promises
+                  li AMD
+                  li CommonJS
+                  li KnockoutJS
+                  li AngularJS
+                  li Protractor
+                  li Jasmine
+                  li CucumberJS
+                  li NodeJS
+                  li iojs
+                  li Mocha
+                  li Chai.js
+                  li Express
+                  li Jade
+                  li MongoDB
+                  li Q
+                  li Gulp
+                  li Grunt
+                  li IstanbulJs
+                  li browserify
+                  li jshint
+                  li jslint
             li
               skill-chart(value='100', font-ligatures='msnet')
-              .preview
-                .inner
-                  span.close
-                  .logo
-                    i.icon- msnet
-                  .details
-                    h3 Microsoft .NET
-                    ul
-                      li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      li Pellentesque lacinia quam a metus dignissim finibus.
+              div.topics
+                ul
+                  li C#
+                  li Console applications
+                  li Windows Forms
+                  li Windows Presentation Foundation (WPF)
+                  li Web applications (WebForms and MVC.NET)
+                  li Web services
+                  li Windows services
+                  li Service-oriented applications using Windows Communication Foundation (WCF)
+                  li LINQ
+                  li Entity Framework
+                  li StructureMap
+                  li AutoMapper
+                  li SQL Server
             li
               skill-chart(value='100', font-ligatures='html5shield')
-              .preview
-                .inner
-                  span.close
-                  .logo
-                    i.icon- html5shield
-                  .details
-                    h3 HTML5
-                    ul
-                      li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      li Pellentesque lacinia quam a metus dignissim finibus.
-                      li In cursus justo eu rhoncus tincidunt.
-                      li Nulla a lectus ut orci varius lobortis.
-                      li Nunc quis augue vitae tortor dignissim sodales.
-                      li Fusce a tortor eget enim tristique molestie
+              div.topics
+                ul
+                  li Semantics
+                  li Control Attributes
+                  li Graphics (Canvas and SVG)
+                  li Multimedia (Audio and Video)
+                  li Web Workers
+                  li Local Storage
+                  li Geolocation
+                  li Support (Modernizr, html5shiv)
+                  li Libraries (jQuery, jQueryUI and Sencha Touch)
             li
               skill-chart(value='75', font-ligatures='css3shield')
-              .preview
-                .inner
-                  span.close
-                  .logo
-                    i.icon- css3shield
-                  .details
-                    h3 CSS3
-                    ul
-                      li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      li Pellentesque lacinia quam a metus dignissim finibus.
-                      li In cursus justo eu rhoncus tincidunt.
-                      li Nulla a lectus ut orci varius lobortis.
-                      li Nunc quis augue vitae tortor dignissim sodales.
-                      li Fusce a tortor eget enim tristique molestie
+              div.topics
+                ul
+                  li Selectors
+                  li Box Model
+                  li Backgrounds and Borders
+                  li Image Values and Replaced Content
+                  li Text Effects
+                  li 2D/3D Transformations
+                  li Animations
+                  li Multiple Column Layout
+                  li User Interface
+                  li SCSS
+                  li LESS
+                  li Responsive Design
+                  li Mobile First Design
+                  li Curb Foundation
+                  li Bootstrap
+                  li CSS Performance Tuning
             li
               skill-chart(value='65', font-ligatures='sfdc')
-              .preview
-                .inner
-                  span.close
-                  .logo
-                    i.icon- sfdc
-                  .details
-                    h3 Salesforce.com
-                    ul
-                      li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      li Pellentesque lacinia quam a metus dignissim finibus.
-                      li In cursus justo eu rhoncus tincidunt.
-                      li Nulla a lectus ut orci varius lobortis.
-                      li Nunc quis augue vitae tortor dignissim sodales.
-                      li Fusce a tortor eget enim tristique molestie
+              div.topics
+                ul
+                  li Data Modelling
+                  li Data Managing
+                  li Data Security
+                  li Sales Cloud
+                  li Communities
+                  li Apex
+                  li Apex Triggers
+                  li Apex Testing
+                  li Apex Integration Service (SOAP)
+                  li Visual Force
+                  li Sandbox Management
+                  li Deployment from Non-Production to Production
+                  li Salesforce.com Migration Tool
+                  li Metadata Version Control
+                  li Continuous Integration Implementation on Salesforce.com
+                  li Apex Design Patterns (Singleton, Strategy and Factory)
 
     section#contact.secondary
       .row

@@ -1,5 +1,7 @@
 skill-chart {
   display: block;
+  width: 50%;
+  margin: 0 25%;
 
   .chart-base {
     fill: #e4eaec;
@@ -11,22 +13,5 @@ skill-chart {
 
   text {
     fill: $primary-foreground-color;
-  }
-}
-
-.preview {
-  background-color: red;
-  position: absolute;
-  top: auto;
-  left: 0;
-  width: 100%;
-  margin-top: 10px;
-  height: 0;
-  overflow: hidden;
-
-  .inner {
-    background-color: green;
-    padding: 50px 30px;
-    height: 100%;
   }
 }
