@@ -38,8 +38,11 @@
     		}
 
     .topics {
+      margin: 1rem 0 1.5rem;
+      ul { margin: 0; }
       ul li { list-style: none; display: inline; }
-      ul li:after { content: " \00b7"; }
+      ul li:before { content: " "; }
+      ul li:after { content: " \2219"; }
       ul li:last-child:after { content: none; }
     }
 	}
