@@ -4,11 +4,11 @@ skill-chart {
   margin: 0 25%;
 
   .chart-base {
-    fill: #e4eaec;
+    fill: $quaternary-background-color;
   }
 
   .chart-slice {
-    fill: #9ac6e2;
+    fill: $tertiary-background-color;
   }
 
   text {

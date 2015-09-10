@@ -2,7 +2,7 @@ doctype html
 html(ng-app="rogeriocarvalho.io")
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
     meta(name='description', content="Rogerio Carvalho's professional experiences and his passion about UI/UX Design, front-end development, design patterns, test driven approaches and agile methodologies.")
     meta(name='author', content='Rogerio Wenzel Carvalho')
     meta(name='keywords', content='rogeriocarvalho.io, rogerio, wenzel, carvalho, rogerio carvalho, rogerio wenzel carvalho')
@@ -225,27 +225,32 @@ html(ng-app="rogeriocarvalho.io")
       .row
         .small-12.columns
           ul.small-block-grid-1
-            li.email
-              a(href='mailto:rogerio.w.carvalho@gmail.com') 
-                span
-                  em rogerio.w.carvalho
-                  | @gmail.com
-                i.icon-envelop
-            li.github
-              a(href='https://github.com/rogah', target='_blank') 
-                span github.com/rogah
-                i.icon-github
-            li.twitter
-              a(href='https://twitter.com/rogeriowc', target='_blank')
-                span @rogeriowc
-                i.icon-twitter
-            li.plus
-              a(href='https://plus.google.com/+RogerioCarvalhoW', target='_blank')
-                span +RogerioCarvalhoW
-                i.icon-google-plus
-            li.linkedin
-              a(href='https://www.linkedin.com/in/rogeriowcarvalho', target='_blank')
-                span Rogerio Carvalho
-                i.icon-linkedin
+            li.text-left
+              .email.msg-left
+                a(href='mailto:rogerio.w.carvalho@gmail.com') 
+                  i.icon-envelop
+                  span
+                    em rogerio.w.carvalho
+                    | @gmail.com
+            li.text-right
+              .github.msg-right
+                a(href='https://github.com/rogah', target='_blank') 
+                  span github.com/rogah
+                  i.icon-github
+            li.text-left
+              .twitter.msg-left
+                a(href='https://twitter.com/rogeriowc', target='_blank')
+                  i.icon-twitter
+                  span @rogeriowc
+            li.text-right
+              .plus.msg-right
+                a(href='https://plus.google.com/+RogerioCarvalhoW', target='_blank')
+                  span +RogerioCarvalhoW
+                  i.icon-google-plus
+            li.text-left
+              .linkedin.msg-left
+                a(href='https://www.linkedin.com/in/rogeriowcarvalho', target='_blank')
+                  i.icon-linkedin
+                  span Rogerio Carvalho
                   
     script(src='/app.bundle.js?v=#{version}')
