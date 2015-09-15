@@ -1,7 +1,5 @@
 skill-chart {
   display: block;
-  width: 50%;
-  margin: 0 25%;
 
   .chart-base {
     fill: $quaternary-background-color;
@@ -13,5 +11,126 @@ skill-chart {
 
   text {
     fill: $primary-foreground-color;
+  }
+} 
+
+skill-set {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  max-width: 630px;
+  min-width: 320px;
+  height: auto;
+  z-index: 2000;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateX(-50%) translateY(-50%);
+
+  &.slide-down {
+    //top: 0;
+    //transform: translateX(-50%);
+
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0%) translateY(0%);
+    background: $primary-background-color;
+
+    .container {
+      position: relative;
+      display: block;
+      height: 100%;
+      transform: translateY(-200%);
+      transition: all .3s;
+      opacity: 0;
+    }
+  }
+
+  &.scale-back {
+    .container {
+      transform: scale(2);
+      opacity: 0;
+      transition: all 0.3s; }
+  }
+
+  &.show {
+    visibility: visible;
+
+    &.scale-back {
+      .container {
+        transform: scale(1);
+        opacity: 1; }
+    }
+
+    &.slide-down {
+      .container {
+        transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1; }
+    }
+  }
+
+  h3 {
+    font-size: 4rem;
+    padding: 1.5rem 0;
+    margin: 0;
+  }
+
+  .content {
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  .close {
+    margin-top: 3rem;
+
+    a {
+      border: 1px solid #fff;
+      padding: 0.5rem 3rem;
+      color: #fff; }
+  }
+
+  .trademark {
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 1rem;
+    padding: 0 1rem;
+
+    hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid $tertiary-background-color;
+      margin: 1rem 0;
+      padding: 0; }
+
+    span {
+      display: block;
+      color: $tertiary-background-color;
+    }
+  }
+}
+
+#overlay {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  background: rgba(22,109,140,0.8);
+  transition: all 0.3s;
+
+  &.show {
+    opacity: 0.8;
+    visibility: visible;
+    background: rgba(22,109,140,0.8);
   }
 }

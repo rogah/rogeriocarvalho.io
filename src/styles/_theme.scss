@@ -6,6 +6,7 @@ $secondary-background-color: #fff;
 
 $tertiary-background-color: #9ac6e2;
 $quaternary-background-color: #e4eaec;
+$quinary-color: #1a92c2;
 
 html, html a {
   -webkit-font-smoothing: antialiased !important;
@@ -25,7 +26,7 @@ body {
 	color: $primary-foreground-color;
 	background-color: $primary-background-color;
 
-	h1, h2 {
+	h1, h2, h3 {
 		color: $primary-foreground-color; }
 }
 
@@ -33,6 +34,6 @@ body {
 	color: $secondary-foreground-color;
 	background-color: $secondary-background-color;
 
-	h1, h2 {
+	h1, h2, h3 {
 		color: $secondary-foreground-color; }
 }

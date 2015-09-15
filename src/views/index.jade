@@ -47,210 +47,216 @@ html(ng-app="rogeriocarvalho.io")
         "url": "http://rogeriocarvalho.io"
       }
   body
-    header
-      .row.cover
-        .small-10.small-offset-1.columns
-          h1.animated.fadeInDown rogerio
-            em carvalho
-          p.animated.zoomIn Passionate about UI/UX Design, front-end development, design patterns, test driven approaches and agile methodologies.
-      .more.animated.fadeInRight
-        .text-center.animated.infinite.bounceEasy
-          a(href='#career-cycle')
-            span.icon-circle-down
+    .page
+      header
+        .row.cover
+          .small-10.small-offset-1.columns
+            h1.animated.fadeInDown rogerio
+              em carvalho
+            p.animated.zoomIn Passionate about UI/UX Design, front-end development, design patterns, test driven approaches and agile methodologies.
+        .more.animated.fadeInRight
+          .text-center.animated.infinite.bounceEasy
+            a(href='#career-cycle')
+              span.icon-circle-down
 
-    section#career-cycle.secondary
-      .row
-        .small-12.columns
-          h2 Software Developer
-      .row
-        .small-10.small-offset-1.columns
-          p Passionate about UI/UX Design, front-end development, design patterns, test driven approaches and agile methodologies
-      .row
-        .small-12.medium-8.medium-offset-2.columns
-          img(src='/images/career-cycle.min.svg')
+      section#career-cycle.secondary
+        .row
+          .small-12.columns
+            h2 Software Developer
+        .row
+          .small-10.small-offset-1.columns
+            p Passionate about UI/UX Design, front-end development, design patterns, test driven approaches and agile methodologies
+        .row
+          .small-12.medium-8.medium-offset-2.columns
+            img(src='/images/career-cycle.min.svg')
 
-    section#skills.primary
-      .brain
-        img(src='/images/brain.min.svg')
-      .statistics.creative
-        b 60%
-        span Creative and visual
-      .statistics.logical
-        b 40%
-        span Logical
-      .row
-        .small-10.small-offset-1.columns
-          p
-            | A software engineer?
-            br
-            | A software developer?
-            br
-            | A frontend developer?
-            br
-            | An aspiring UI/UX designer?
-            br
-            | You name it...
-            br
-          p
-            | I don't feel like I should fit into a single label, neither I want to be put into one. I see myself as a creative individual who loves software engineering and problem solving.
-      .row
-        .small-12.columns
-          h2 Skill Set
-      .row
-        .small-10.small-offset-1.columns
-          p Tap to see more details on each platform specifics.
-      .row
-        .small-12.medium-8.columns
-          ul.small-block-grid-1.medium-block-grid-2(skill-preview)
-            li
-              skill-chart(value='90', font-ligatures='javascript')
-              div.topics
-                ul
-                  li Object-Oriented
-                  li Prototype
-                  li Object Literal
-                  li Namespace Pattern
-                  li Module Pattern
-                  li Sandbox Pattern
-                  li Chaining Pattern
-                  li Browser Patterns (Events, Long-Running Scripts, Remote Scripting, Lazy-Loading, Loading on demand, Preloading JavaScript)
-                  li Mix-ins
-                  li Promises
-                  li AMD
-                  li CommonJS
-                  li KnockoutJS
-                  li AngularJS
-                  li Protractor
-                  li Jasmine
-                  li CucumberJS
-                  li NodeJS
-                  li iojs
-                  li Mocha
-                  li Chai.js
-                  li Express
-                  li Jade
-                  li MongoDB
-                  li Q
-                  li Gulp
-                  li Grunt
-                  li IstanbulJs
-                  li browserify
-                  li jshint
-                  li jslint
-            li
-              skill-chart(value='100', font-ligatures='msnet')
-              div.topics
-                ul
-                  li C#
-                  li Console applications
-                  li Windows Forms
-                  li Windows Presentation Foundation (WPF)
-                  li Web applications (WebForms and MVC.NET)
-                  li Web services
-                  li Windows services
-                  li Service-oriented applications using Windows Communication Foundation (WCF)
-                  li LINQ
-                  li Entity Framework
-                  li StructureMap
-                  li AutoMapper
-                  li SQL Server
-            li
-              skill-chart(value='100', font-ligatures='html5shield')
-              div.topics
-                ul
-                  li Semantics
-                  li Control Attributes
-                  li Graphics (Canvas and SVG)
-                  li Multimedia (Audio and Video)
-                  li Web Workers
-                  li Local Storage
-                  li Geolocation
-                  li Support (Modernizr, html5shiv)
-                  li Libraries (jQuery, jQueryUI and Sencha Touch)
-            li
-              skill-chart(value='75', font-ligatures='css3shield')
-              div.topics
-                ul
-                  li Selectors
-                  li Box Model
-                  li Backgrounds and Borders
-                  li Image Values and Replaced Content
-                  li Text Effects
-                  li 2D/3D Transformations
-                  li Animations
-                  li Multiple Column Layout
-                  li User Interface
-                  li SCSS
-                  li LESS
-                  li Responsive Design
-                  li Mobile First Design
-                  li Curb Foundation
-                  li Bootstrap
-                  li CSS Performance Tuning
-            li
-              skill-chart(value='65', font-ligatures='sfdc')
-              div.topics
-                ul
-                  li Data Modelling
-                  li Data Managing
-                  li Data Security
-                  li Sales Cloud
-                  li Communities
-                  li Apex
-                  li Apex Triggers
-                  li Apex Testing
-                  li Apex Integration Service (SOAP)
-                  li Visual Force
-                  li Sandbox Management
-                  li Deployment from Non-Production to Production
-                  li Salesforce.com Migration Tool
-                  li Metadata Version Control
-                  li Continuous Integration Implementation on Salesforce.com
-                  li Apex Design Patterns (Singleton, Strategy and Factory)
+      section#skills.primary
+        .brain
+          img(src='/images/brain.min.svg')
+        .statistics.creative
+          b 60%
+          span Creative and visual
+        .statistics.logical
+          b 40%
+          span Logical
+        .row
+          .small-10.small-offset-1.columns
+            p
+              | A software engineer?
+              br
+              | A software developer?
+              br
+              | A frontend developer?
+              br
+              | An aspiring UI/UX designer?
+              br
+              | You name it...
+              br
+            p
+              | I don't feel like I should fit into a single label, neither I want to be put into one. I see myself as a creative individual who loves software engineering and problem solving.
+        .row
+          .small-12.columns
+            h2 Skill Set
+        .row
+          .small-10.small-offset-1.columns
+            p Tap to see more details on each platform specifics.
+        .row
+          .small-12.medium-8.columns
+            ul.small-block-grid-2.medium-block-grid-3
+              li
+                skill-chart#skillchart-js(value='90', font-ligatures='javascript')
+                skill-set.slide-down(trigger-id='skillchart-js', font-ligatures='javascript')
+                  div.topics
+                    ul
+                      li Object-Oriented
+                      li Prototype
+                      li Object Literal
+                      li Namespace Pattern
+                      li Module Pattern
+                      li Sandbox Pattern
+                      li Chaining Pattern
+                      li Browser Patterns (Events, Long-Running Scripts, Remote Scripting, Lazy-Loading, Loading on demand, Preloading JavaScript)
+                      li Mix-ins
+                      li Promises
+                      li AMD
+                      li CommonJS
+                      li KnockoutJS
+                      li AngularJS
+                      li Protractor
+                      li Jasmine
+                      li CucumberJS
+                      li NodeJS
+                      li iojs
+                      li Mocha
+                      li Chai.js
+                      li Express
+                      li Jade
+                      li MongoDB
+                      li Q
+                      li Gulp
+                      li Grunt
+                      li IstanbulJs
+                      li browserify
+                      li jshint
+                      li jslint
+              li
+                skill-chart#skillchart-msnet(value='100', font-ligatures='msnet')
+                skill-set.slide-down(trigger-id='skillchart-msnet', font-ligatures='msnet')
+                  div.topics
+                    ul
+                      li C#
+                      li Console applications
+                      li Windows Forms
+                      li Windows Presentation Foundation (WPF)
+                      li Web applications (WebForms and MVC.NET)
+                      li Web services
+                      li Windows services
+                      li Service-oriented applications using Windows Communication Foundation (WCF)
+                      li LINQ
+                      li Entity Framework
+                      li StructureMap
+                      li AutoMapper
+                      li SQL Server
+              li
+                skill-chart#skillchart-html5(value='100', font-ligatures='html5shield')
+                skill-set.slide-down(trigger-id='skillchart-html5', font-ligatures='html5shield')
+                  div.topics
+                    ul
+                      li Semantics
+                      li Control Attributes
+                      li Graphics (Canvas and SVG)
+                      li Multimedia (Audio and Video)
+                      li Web Workers
+                      li Local Storage
+                      li Geolocation
+                      li Support (Modernizr, html5shiv)
+                      li Libraries (jQuery, jQueryUI and Sencha Touch)
+              li
+                skill-chart#skillchart-css3(value='75', font-ligatures='css3shield')
+                skill-set.slide-down(trigger-id='skillchart-css3', font-ligatures='css3shield')
+                  div.topics
+                    ul
+                      li Selectors
+                      li Box Model
+                      li Backgrounds and Borders
+                      li Image Values and Replaced Content
+                      li Text Effects
+                      li 2D/3D Transformations
+                      li Animations
+                      li Multiple Column Layout
+                      li User Interface
+                      li SCSS
+                      li LESS
+                      li Responsive Design
+                      li Mobile First Design
+                      li Curb Foundation
+                      li Bootstrap
+                      li CSS Performance Tuning
+              li
+                skill-chart#skillchart-sfdc(value='65', font-ligatures='sfdc')
+                skill-set.slide-down(trigger-id='skillchart-sfdc', font-ligatures='sfdc')
+                  div.topics
+                    ul
+                      li Data Modelling
+                      li Data Managing
+                      li Data Security
+                      li Sales Cloud
+                      li Communities
+                      li Apex
+                      li Apex Triggers
+                      li Apex Testing
+                      li Apex Integration Service (SOAP)
+                      li Visual Force
+                      li Sandbox Management
+                      li Deployment from Non-Production to Production
+                      li Salesforce.com Migration Tool
+                      li Metadata Version Control
+                      li Continuous Integration Implementation on Salesforce.com
+                      li Apex Design Patterns (Singleton, Strategy and Factory)
 
-    section#contact.secondary
-      .row
-        .small-12.columns
-          h2 Getting in Touch
-      .row
-        .small-10.small-offset-1.columns
-          p If you want to reach out, please find some of the available channels below:
-      .row
-        .small-10.small-offset-1.columns
-          .phone
-              a.text-center(href='tel://+555193228033') 
-                i.icon-iphone
-                span +55 51
-                  em 93228033
-      .row
-        .small-12.columns
-          ul.small-block-grid-1
-            li.text-left
-              .email.msg-left
-                a(href='mailto:rogerio.w.carvalho@gmail.com') 
-                  i.icon-envelop
-                  span
-                    em rogerio.w.carvalho
-                    | @gmail.com
-            li.text-right
-              .github.msg-right
-                a(href='https://github.com/rogah', target='_blank') 
-                  span github.com/rogah
-                  i.icon-github
-            li.text-left
-              .twitter.msg-left
-                a(href='https://twitter.com/rogeriowc', target='_blank')
-                  i.icon-twitter
-                  span @rogeriowc
-            li.text-right
-              .plus.msg-right
-                a(href='https://plus.google.com/+RogerioCarvalhoW', target='_blank')
-                  span +RogerioCarvalhoW
-                  i.icon-google-plus
-            li.text-left
-              .linkedin.msg-left
-                a(href='https://www.linkedin.com/in/rogeriowcarvalho', target='_blank')
-                  i.icon-linkedin
-                  span Rogerio Carvalho
+      section#contact.secondary
+        .row
+          .small-12.columns
+            h2 Getting in Touch
+        .row
+          .small-10.small-offset-1.columns
+            p If you want to reach out, please find some of the available channels below:
+        .row
+          .small-10.small-offset-1.columns
+            .phone
+                a.text-center(href='tel://+555193228033') 
+                  i.icon-iphone
+                  span +55 51
+                    em 93228033
+        .row
+          .small-12.columns
+            ul.small-block-grid-1
+              li.text-left
+                .email.msg-left
+                  a(href='mailto:rogerio.w.carvalho@gmail.com') 
+                    i.icon-envelop
+                    span
+                      em rogerio.w.carvalho
+                      | @gmail.com
+              li.text-right
+                .github.msg-right
+                  a(href='https://github.com/rogah', target='_blank') 
+                    span github.com/rogah
+                    i.icon-github
+              li.text-left
+                .twitter.msg-left
+                  a(href='https://twitter.com/rogeriowc', target='_blank')
+                    i.icon-twitter
+                    span @rogeriowc
+              li.text-right
+                .plus.msg-right
+                  a(href='https://plus.google.com/+RogerioCarvalhoW', target='_blank')
+                    span +RogerioCarvalhoW
+                    i.icon-google-plus
+              li.text-left
+                .linkedin.msg-left
+                  a(href='https://www.linkedin.com/in/rogeriowcarvalho', target='_blank')
+                    i.icon-linkedin
+                    span Rogerio Carvalho
                   
     script(src='/app.bundle.js?v=#{version}')

@@ -68,6 +68,7 @@
   },
   "devDependencies": {
     "cucumber": "^0.4.9",
+    "gsap": "^1.18.0",
     "gulp-nodemon": "^2.0.3",
     "mocha": "^2.2.5",
     "should": "^6.0.3",
@@ -80,7 +81,8 @@
   "license": "MIT",
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
-    "foundation": "./node_modules/foundation-sites/js/foundation.js"
+    "foundation": "./node_modules/foundation-sites/js/foundation.js",
+    "gsap-tween-lite": "./node_modules/gsap/src/uncompressed/TweenLite.js"
   },
   "browserify-shim": {
     "jquery": "$",
